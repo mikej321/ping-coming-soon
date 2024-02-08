@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <script src="https://kit.fontawesome.com/a8066ebb61.js" crossorigin="anonymous"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Ping coming soon page</title>
@@ -16,13 +16,27 @@
 <script defer src="ping.js"></script></head>
 <body>
 
-  We are launching soon!
-
-  Subscribe and get notified
-
-  Notify Me
-
-  &copy; Copyright Ping. All rights reserved.
+  <main>
+    <img class="logo" src=7e09371f05c7e00fddcc.svg alt="The company logo">
+    <div class="intro-info">
+      <h1>We are launching <span class="soon">soon!</span></h1>
+      <p>Subscribe and get notified</p>
+    </div>
+    <div class="input-container">
+      <div class="email-container">
+        <input type="email" name="email" id="email" placeholder="Your email address...">
+        <p class="errorMsg">Please provide a valid email address</p>
+      </div>
+      <button class="notifyBtn" type="button" closed="">Notify Me</button>
+    </div>
+    <img class="dash-illustration" src=f9aaf3db81c10cfaff45.png alt="An image of a dashboard">
+    <div class="icon-container">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+  </main>
 
   <footer>
     <p class="attribution">
