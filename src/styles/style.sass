@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap')
+
+$libre: 'Libre Franklin', sans-serif
+
+// Primary Colors
+$blue: hsl(223, 87%, 63%)
+
+// Secondary Colors
+$pale_blue: hsl(223, 100%, 88%)
+$light_red: hsl(354, 100%, 66%)
+
+// Neutral Colors
+$gray: hsl(0, 0%, 59%)
+$very_dark_blue: hsl(209, 33%, 12%)
+
+// font-sizes
+$font_size: 20px
+
+*,
+*::before,
+*::after
+    box-sizing: border-box
+
+*
+    margin: 0
+    padding: 0
+    scroll-behavior: smooth
+
+html
+    font-size: 62.5%
+
+img
+    width: 100%
+    height: auto
+    object-fit: cover
+
+body
+    font-size: 1.6rem
+    font-family: $libre
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    gap: 2rem
+
+main
+    display: grid
+    max-width: 37.5rem
+    grid-template-areas: "logo" "launch" "inputs" "dashImg" "icons" "copyright"
+    justify-items: center
+
+@media screen and (min-width: 600px)
+    main
+        max-width: 700px
+        padding-inline: 5rem
+
+.logo
+    grid-area: logo
+    max-width: 6rem
+    margin-block: 6rem 4rem
+
+@media screen and (min-width: 600px)
+    .logo
+        max-width: 10rem
+
+.intro-info
+    grid-area: launch
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 2rem
+
+@media screen and (min-width: 600px)
+    .intro-info
+        gap: 1rem
+
+.intro-info h1
+    color: $gray
+    font-weight: 300
+    font-size: $font_size
+    letter-spacing: 1px
+    .soon
+        font-weight: 700
+        color: $very_dark_blue
+
+@media screen and (min-width: 600px)
+    .intro-info h1
+        font-size: 4rem
+
+.intro-info p
+    font-size: 1.2rem
+    letter-spacing: .1px
+    margin-bottom: 3rem
+
+@media screen and (min-width: 600px)
+    .intro-info p
+        font-size: 1.7rem
+
+.input-container
+    grid-area: inputs
+    display: flex
+    flex-direction: column
+    width: 100%
+    max-width: 34rem
+    gap: 1rem
+    input[type="email"]
+        height: 4rem
+        width: 100%
+        padding-left: 3rem
+        border: 1px solid $pale_blue
+        border-radius: 20px
+        font-family: inherit
+        &:focus
+            outline: none
+        &::placeholder
+            color: $gray
+            font-size: 1.1rem
+        &[error='']
+            border: 1px solid $light_red          
+    button[type="button"]
+        height: 4rem
+        border: none
+        font-weight: 600
+        font-size: 1.1rem
+        color: white
+        font-family: inherit
+        border-radius: 20px
+        margin-bottom: 7rem
+        box-shadow: 0px 6px 12px $pale_blue
+        &[closed='']
+            background: lighten($blue, 10%)
+            pointer-events: none
+        &[open='']
+            background: $blue
+            pointer-events: all
+            cursor: pointer
+            transition: background 0.2s ease-in-out
+            &:hover
+                background: lighten($blue, 10%)
+
+.email-container
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: .75rem
+
+.errorMsg
+    color: $light_red
+    font-size: 1rem
+    font-style: italic
+    max-height: 0
+    overflow: hidden
+    transition: all 0.2s ease-in-out
+    &[error='']
+        max-height: fit-content
+        margin-bottom: 1.5rem
+
+@media screen and (min-width: 600px)
+    .errorMsg[error='']
+        margin-bottom: 0
+
+@media screen and (min-width: 600px)
+    .input-container
+        flex-direction: row
+        max-width: unset
+        input[type="email"]
+            width: 40rem
+            margin-left: 1rem
+        button[type="button"]
+            width: 28%
+
+.dash-illustration
+    grid-area: dashImg
+    margin-bottom: 9rem
+
+.icon-container
+    grid-area: icons
+    display: flex
+    gap: 1rem
+    margin-bottom: 3rem
+    i
+        color: $blue
+        cursor: pointer
+        border: 1px solid $pale_blue
+        width: 3rem
+        height: 3rem
+        font-size: 1.4rem
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        transition: all 0.2s ease-in-out
+        &:hover
+            background: $blue
+            border: none
+            color: white
+
+@media screen and (min-width: 600px)
+    .icon-container
+        gap: 1.5rem
+
+.copyright
+    grid-area: copyright
+    color: $gray
+    font-size: 1rem
+
+
+
+// Ping && the launching soon/subscribe can be together
+
+// The inputs will be together as a flexbox...for mobile(column)/desktop(row)
+
+// The image and icon are on their own

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://kit.fontawesome.com/a8066ebb61.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <img class="logo" src=<%=require("./images/logo.svg")%> alt="The company logo">
+    <div class="intro-info">
+      <h1>We are launching <span class="soon">soon!</span></h1>
+      <p>Subscribe and get notified</p>
+    </div>
+    <div class="input-container">
+      <div class="email-container">
+        <input type="email" name="email" id="email" placeholder="Your email address...">
+        <p class="errorMsg">Please provide a valid email address</p>
+      </div>
+      <button class="notifyBtn" type="button" closed="">Notify Me</button>
+    </div>
+    <img class="dash-illustration" src=<%=require("./images/illustration-dashboard.png")%> alt="An image of a dashboard">
+    <div class="icon-container">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>
